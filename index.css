@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.display{
+    color: #fff;
+    width: 100vw;
+    height: 100vh;
+    background-color: #242020;
+}
+
+.display .upNavbar{
+    width: 100%;
+    top: 70px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+
+    white-space: nowrap;
+}
+
+.line{
+    background-color: whitesmoke;
+    width: 550px;
+    height: 2px;
+    border-radius: 5px;
+}
+
+.display .upNavbar .options{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 0px 50px;
+}
+
+.display .upNavbar .options .option,
+.display .lowNavbar .dotmenu{
+    cursor: pointer;
+}
+
+.display .upNavbar .options .option:hover,
+.display .lowNavbar .dotmenu:hover{
+    color: #fff;
+    text-shadow: 0px 0px 5px #fff;
+}
+
+.display .lowNavbar{
+    width: 100%;
+    bottom: 60px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+
+}
+
+.display .lowNavbar .dotmenu{
+    font-size: 20px;
+    padding: 0px 50px;
+    text-align: center;
+}
+
+.focus{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-radius: 100px;
+    background-color: #fff;
+    box-shadow: 0px 0px 200px 100px #fff4;
+}
+
+#foc1{
+    top: 30%;
+    left: 25%;
+}
+
+#foc2{
+    top: 60%;
+    left: 70%;
+}
+
+.content{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 70px; */
+    font-weight: 600;
+    z-index: 0;
+}
+
+/* -------------------------------------ADD IN TO JS FILE------------------------------------------ */
+
+.box{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+
+}
+
+.photo img{
+    border-radius: 100%;
+    width: 305px;
+    height: 310px
+}
+.meta{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+}
+
+.meta .title{
+    font-size: 30px;
+}
+
+.meta .minititle{
+    font-size: 20px;
+    font-weight: 200;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: capitalize;
+}
