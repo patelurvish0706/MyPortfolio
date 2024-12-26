@@ -32,8 +32,14 @@ opt1.addEventListener('click', () => {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
+
         }
 
+        .photo{
+            width:auto;
+        }
+        
         .photo img{
             border-radius: 100%;
             width: 305px;
@@ -363,5 +369,51 @@ opt4.addEventListener('click', () => {
 
 
 opt5.addEventListener('click', () => {
-    content.innerHTML = "Resume";
+    content.innerHTML = `<div class="box">
+            <div class="thnku">Thank You</div>
+            <div class="links">
+                <div class="insta"><a href="http://www.instagram.com/urvish_0706" target="_blank">www.instagram.com/urvish_0706</a></div>
+                <div class="linked"><a href="https://www.linkedin.com/in/urvishpatel0706/" target="_blank">www.linkedin.com/in/urvishpatel0706/</a></div>
+                <div class="git"><a href="https://github.com/patelurvish0706" target="_blank">github.com/patelurvish0706</a></div>
+            </div>
+            <div class="phone">
+                <div class="call">+91 743-602-0138</div>
+                <div class="mail">patelurvish0706@gmail.com</div>
+            </div>
+        </div>`;
+
+    const style = document.createElement('style');
+    style.innerHTML = `.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.thnku{
+    font-size: 30px;
+    margin:30px 0px 20px 0px;
+}
+
+.links,.phone{
+    display: flex;
+    flex-direction: c;
+    gap: 25px;
+    text-transform: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin: 20px 0px;
+    font-weight: 600;
+}
+
+.links a{
+    color: #ffffffd1;
+}
+.links a:hover{
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #fff;
+}`;
+
+document.head.appendChild(style);
+
 });
