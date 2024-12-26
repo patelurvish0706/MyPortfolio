@@ -18,39 +18,43 @@ opt1.addEventListener('click', () => {
                             </div>
                         </div>`;
 
-    const box = document.querySelector('.box');
-    box.style.display = 'flex';
-    box.style.flexDirection = 'row';
-    box.style.gap = '80px';
 
-    const photoImg = document.querySelectorAll('.photo img');
-    photoImg.forEach(img => {
-        img.style.borderRadius = '100%';
-        img.style.width = '350px';
-        img.style.height = '350px';
-    });
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .box{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
 
-    const meta = document.querySelector('.meta');
-    meta.style.width = '400px';
-    meta.style.display = 'flex';
-    meta.style.flexDirection = 'column';
-    meta.style.gap = '40px';
-    meta.style.justifyContent = 'center';
+        .photo img{
+            border-radius: 100%;
+            width: 305px;
+            height: 310px
+        }
+        .meta{
+            margin-left: 60px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            justify-content: center;
+        }
 
-    const title = document.querySelectorAll('.meta .title');
-    title.forEach(title => {
-        title.style.fontSize = '30px';
-    });
+        .meta .title{
+            font-size: 30px;
+        }
 
-    const minititle = document.querySelectorAll('.meta .minititle');
-    minititle.forEach(minititle => {
-        minititle.style.fontSize = '20px';
-        minititle.style.fontWeight = '200';
-        minititle.style.fontFamily = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-        minititle.style.textTransform = 'capitalize';
-    });
+        .meta .minititle{
+            font-size: 20px;
+            font-weight: 200;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-transform: capitalize;
+        } `;
 
+    document.head.appendChild(style);
 });
+
 
 // Education
 opt2.addEventListener('click', () => {
@@ -70,66 +74,178 @@ opt2.addEventListener('click', () => {
             </div>
         </div>`;
 
-    const box = document.querySelector('.box');
-    const edu = document.querySelectorAll('.edu');
-    const eduTitlemain = document.querySelectorAll('.eduTitlemain');
-    const course = document.querySelectorAll('.course');
-    const Colname = document.querySelectorAll('.Colname');
-    const photo = document.querySelectorAll('.photo');
-    const cpicImg = document.querySelectorAll('.cpic img');
-    const photo1 = document.getElementById('photo1');
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .box{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .edu{
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+        }
+        
+        .eduTitlemain{
+            font-size: 30px;
+        }
+        
+        .course{
+            margin-top:30px ;
+            font-size: 20px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        .Colname{
+            font-size: 20px;
+            font-weight: 200;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-transform: capitalize;
+        }
+        .photo{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+        }
+        
+        .cpic img{
+            width: 280px;
+            height: 180px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            border-radius: 10px;
+            margin: 5px;
+        }
+        
+        #photo1{
+            display: flex;
+            justify-content: end;
+        }`;
 
-    box.style.display = 'flex';
-    box.style.flexDirection = 'row';
-    box.style.justifyContent = 'center';
-    box.style.alignItems = 'center';
-
-    edu.forEach(element => {
-        element.style.display = 'flex';
-        element.style.flexDirection = 'column';
-        element.style.width = '500px';
-    });
-
-    eduTitlemain.forEach(element => {
-        element.style.fontSize = '30px';
-    });
-
-    course.forEach(element => {
-        element.style.marginTop = '30px';
-        element.style.fontSize = '20px';
-        element.style.fontFamily = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-    });
-
-    Colname.forEach(element => {
-        element.style.fontSize = '20px';
-        element.style.fontWeight = '200';
-        element.style.fontFamily = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
-        element.style.textTransform = 'capitalize';
-    });
-
-    photo.forEach(element => {
-        element.style.display = 'flex';
-        element.style.flexDirection = 'column';
-        element.style.width = '400px';
-    });
-
-    cpicImg.forEach(element => {
-        element.style.width = '280px';
-        element.style.height = '180px';
-        element.style.objectFit = 'cover';
-        element.style.filter = 'grayscale(100%)';
-        element.style.margin = '5px';
-    });
-
-    photo1.style.display = 'flex';
-    photo1.style.justifyContent = 'end';
-    
+    document.head.appendChild(style);
 });
 
+
+// Expertise
 opt3.addEventListener('click', () => {
-    content.innerHTML = "Experiance";
+    content.innerHTML = `<div class="box">
+            <div class="secUp">
+                <div class="pic" id="photo1"><img src="src/skills/skill1.png" alt="" srcset=""></div>
+                <div class="skilltitle">Skills</div>
+                <div class="pic" id="photo2"><img src="src/skills/skill3.png" alt="" srcset=""></div>
+            </div>
+            <div class="secdwn">
+                <div class="skillset" id="front">
+                    <div class="facTitle">Frontend Skills</div>
+                    <ul>
+                        <li>Html</li>
+                        <li>css</li>
+                        <li>Javascipt</li>
+                    </ul>
+                </div>
+
+                <div class="skillset" id="back">
+                    <div class="facTitle">Backend Skills</div>
+                    <ul>
+                        <li>Java</li>
+                        <li>Node.js</li>
+                        <li>React.js</li>
+                    </ul>
+                </div>
+
+                <div class="skillset" id="db">
+                    <div class="facTitle">Databases</div>
+                    <ul>
+                        <li>MySql</li>
+                        <li>Mongo.DB</li>
+                    </ul>
+                </div>
+
+                <div class="skillset" id="verc">
+                    <div class="facTitle">Version control</div>
+                    <ul>
+                        <li>Git/Github</li>
+                    </ul>
+                </div>
+            </div>
+        </div>`;
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .box {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .secUp {
+          margin-top: 50px;
+          width: auto;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .skilltitle {
+          font-size: 30px;
+          text-transform: uppercase;
+          justify-content: left;
+          margin: 80px;
+        }
+
+        #photo1 img {
+          justify-content: right;
+        }
+
+        .secUp .pic img {
+          border-radius: 10px;
+          width: 250px;
+          filter: grayscale(100%);
+        }
+
+        .secdwn {
+          width: auto;
+          display: flex;
+          flex-direction: row;
+          white-space: nowrap;
+          justify-content: space-between;
+          margin-top: 30px;
+          gap: 20px;
+        }
+
+        .skillset {
+          margin: 10px;
+        }
+
+        .skillset ul li {
+          font-size: 20px;
+          font-weight: 200;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          text-transform: capitalize;
+        }
+
+        .skillset ul {
+          margin: 10px;
+        }
+
+        .facTitle {
+          text-align: center;
+          font-size: 18px;
+          margin: 0;
+        }
+        `;
+
+    document.head.appendChild(style);
+
 });
 
+
+// MyWorks
 opt4.addEventListener('click', () => {
     content.innerHTML = "My Work";
 });
