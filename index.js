@@ -1,3 +1,10 @@
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.top = e.clientY + (-15) + 'px';
+    cursor.style.left = e.clientX + (-15) + 'px';
+});
+
 const opt1 = document.getElementById("opt1");
 const opt2 = document.getElementById("opt2");
 const opt3 = document.getElementById("opt3");
@@ -223,10 +230,15 @@ opt3.addEventListener('click', () => {
         }
 
         .skillset ul li {
+          color: #fffa;
           font-size: 20px;
           font-weight: 200;
           font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
           text-transform: capitalize;
+        }
+
+        .skillset ul li:hover{
+          color: #fff;
         }
 
         .skillset ul {
@@ -244,11 +256,111 @@ opt3.addEventListener('click', () => {
 
 });
 
-
 // MyWorks
 opt4.addEventListener('click', () => {
-    content.innerHTML = "My Work";
+    content.innerHTML = `<div class="box">
+            <div class="myWorktitle">My Works</div>
+            <div class="props">
+                <div class="project">
+                   <div class="ptitle">Patient Information Management System</div>
+                   <div class="pcode">Frontend (Only)</div>
+                   <div class="pstatus">Live🔴</div>
+                   <div class="plink"><a href="https://patelurvish0706.github.io/PIMS/" target="_blank">Show Project</a></div>
+                </div>
+
+                <div class="project">
+                    <div class="ptitle">Login Signup PHP code</div>
+                    <div class="pcode">Backend (Only)</div>
+                    <div class="pstatus">offline🌐</div>
+                    <div class="plink"><a href="https://patelurvish0706.github.io/Signup-login/" target="_blank">Show Project</a></div>
+                </div>
+                
+                <div class="project">
+                    <div class="ptitle">My portfolio</div>
+                    <div class="pcode">Fronted</div>
+                    <div class="pstatus">You're Watching✨</div>
+                    <div class="plink"><a href="https://github.com/patelurvish0706/MyPortfolio" target="_blank">Source Code</a></div>
+                </div>
+
+                <div class="project">
+                    <div class="ptitle">Learning DSA</div>
+                    <div class="pcode">Interview prep.</div>
+                    <div class="pstatus">avilable✅</div>
+                    <div class="plink"><a href="https://github.com/patelurvish0706/LearningJava">Source Code</a></div>
+                </div>
+            </div>
+        </div>`;
+
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .myWorktitle{
+            font-size: 30px;
+            margin:30px 0px 40px 0px;
+        }
+
+        .props{
+            width: 950px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .project{
+            color: #fff;
+            background: #fff2;
+            width: 200px;
+            height: 220px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .project:hover{
+            color: #000000a0;
+            background: #fff;
+            /* box-shadow: 0px 0px 25px #ffffff7d; */
+        }
+
+        .ptitle{
+            font-size: 25px;
+            font-weight: 800;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-bottom: 15px;
+        }
+
+        .pcode,.pstatus,.plink{
+            text-transform: capitalize; 
+            font-size: 12px;
+            font-weight: 200;
+        }
+
+        .plink{
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        .plink a{
+            color: rgb(255, 255, 255);
+            text-shadow: 0px 0px 8px #000000;
+        }
+
+        .plink a:hover{
+            color: rgba(0, 0, 0, 0.832);
+            text-decoration: underline;
+        }
+        `;
+
+    document.head.appendChild(style);
+
 });
+
 
 opt5.addEventListener('click', () => {
     content.innerHTML = "Resume";

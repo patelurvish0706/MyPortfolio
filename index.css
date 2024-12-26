@@ -6,10 +6,26 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-transform: uppercase;
     user-select: none;
+    cursor: none;
 }
 
+.cursor {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    background-color: rgba(128, 128, 128, 0.538);
+    pointer-events: none; 
+    transition: transform 0.2s ease; 
+    z-index: 100;
+  }
+  
+
 .display{
-    color: #fff;
+    color: #ffffff;
     width: 100vw;
     height: 100vh;
     background-color: #242020;
@@ -29,28 +45,24 @@ body {
 }
 
 .line{
-    background-color: whitesmoke;
+    background-color: rgb(255, 255, 255);
     width: 550px;
     height: 2px;
     border-radius: 5px;
 }
 
 .display .upNavbar .options{
+    color: #ffffffbb;
     display: flex;
     flex-direction: row;
     gap: 30px;
     padding: 0px 50px;
 }
 
-.display .upNavbar .options .option,
-.display .lowNavbar .dotmenu{
-    cursor: pointer;
-}
-
 .display .upNavbar .options .option:hover,
 .display .lowNavbar .dotmenu:hover{
     color: #fff;
-    text-shadow: 0px 0px 5px #fff;
+    text-shadow: 0px 0px 25px #fff;
 }
 
 .display .lowNavbar{
@@ -189,6 +201,8 @@ body {
 
 
 /* For EXPERIANCE */
+
+
 /*
 .box{
     display: flex;
@@ -255,3 +269,68 @@ body {
     margin: 0;
 }
 */
+
+/* My workkk */
+
+/* .box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.myWorktitle{
+    font-size: 30px;
+    margin:30px 0px 40px 0px;
+}
+
+.props{
+    width: 950px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project{
+    color: #fff;
+    background: #fff2;
+    width: 200px;
+    height: 220px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.project:hover{
+    color: #000000a0;
+    background: #fff;
+    /* box-shadow: 0px 0px 25px #ffffff7d; */
+}
+
+.ptitle{
+    font-size: 25px;
+    font-weight: 800;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 15px;
+}
+
+.pcode,.pstatus,.plink{
+    text-transform: capitalize; 
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.plink{
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.plink a{
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 8px #000000;
+}
+
+.plink a:hover{
+    color: rgba(0, 0, 0, 0.832);
+    text-decoration: underline;
+} */
+
