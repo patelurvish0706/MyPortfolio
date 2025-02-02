@@ -5,30 +5,26 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + (-15) + 'px';
 });
 
-const opt1 = document.getElementById("opt1");
-const opt2 = document.getElementById("opt2");
-const opt3 = document.getElementById("opt3");
-const opt4 = document.getElementById("opt4");
-const opt5 = document.getElementById("opt5");
+const content = document.getElementById('content');
+const opt1 = document.getElementById('opt1'); // elements with ids "opt1", "opt2", etc.
+const opt2 = document.getElementById('opt2');
+const opt3 = document.getElementById('opt3');
+const opt4 = document.getElementById('opt4');
+const opt5 = document.getElementById('opt5');
 
-const content = document.getElementsByClassName('content')[0];
-content.innerHTML = "PORTFOLIO";
-content.style.fontSize = "70px";
-
-// Urvish Patel
-opt1.addEventListener('click', () => {
-    content.innerHTML = `<div class="box">
+const contents = [ 
+    {
+        element: opt1,
+        html:
+            `<div class="box">
                             <div class="photo"><img src="src/myImg2.jpg" alt="" srcset=""></div>
                             <div class="meta">
                                 <div class="title">About Me</div>
                                 <div class="minititle">Hello, my name is Urvish Patel. I am 19 years old BE IT student and have a hobby of creating amazing websites. I am a Developer with 3 years experience as a Student developer. I started my career in IT field since I was 16 years old.</div>
                             </div>
-                        </div>`;
-
-
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .box{
+                        </div>`,
+        style:
+            `.box{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -63,32 +59,39 @@ opt1.addEventListener('click', () => {
             font-weight: 200;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             text-transform: capitalize;
-        } `;
+        } 
+        
+        #opt1{
+            color: #fff;
+            text-shadow: 0px 0px 25px #fff;
+        }
 
-    document.head.appendChild(style);
-});
+        #opt2,#opt3,#opt4,#opt5{
+            color: #ffffffbb;
+            text-shadow: none;
+        }
+        `
+    },
+    {
+        element: opt2,
+        html:
+            `<div class="box">
+        <div class="edu">
+            <div class="eduTitlemain">Education</div>
 
-
-// Education
-opt2.addEventListener('click', () => {
-    content.innerHTML = `        <div class="box">
-            <div class="edu">
-                <div class="eduTitlemain">Education</div>
-
-                <div class="course" id="studyTitle1">Bechalor of Engineering - IT</div>
-                <div class="Colname" id="collageTit1">Shree Swaminarayan Institute of technology,<br>Bhat - Ahmedabad.</div>
-                
-                <div class="course" id="studyTitle2">Diploma in Engineering - IT</div>
-                <div class="Colname" id="collageTit2">Government Polytechnic, Ghandhinagar.</div>
-            </div>
-            <div class="photo">
-                <div class="cpic" id="photo1"><img src="src/edu1.png" alt=""></div>
-                <div class="cpic" id="photo2"><img src="src/edu2.png" alt=""></div>
-            </div>
-        </div>`;
-
-    const style = document.createElement('style');
-    style.innerHTML = `
+            <div class="course" id="studyTitle1">Bechalor of Engineering - IT</div>
+            <div class="Colname" id="collageTit1">Shree Swaminarayan Institute of technology,<br>Bhat - Ahmedabad.</div>
+            
+            <div class="course" id="studyTitle2">Diploma in Engineering - IT</div>
+            <div class="Colname" id="collageTit2">Government Polytechnic, Ghandhinagar.</div>
+        </div>
+        <div class="photo">
+            <div class="cpic" id="photo1"><img src="src/edu1.png" alt=""></div>
+            <div class="cpic" id="photo2"><img src="src/edu2.png" alt=""></div>
+        </div>
+        </div>`,
+        style:
+            `
         .box{
             display: flex;
             flex-direction: row;
@@ -136,15 +139,22 @@ opt2.addEventListener('click', () => {
         #photo1{
             display: flex;
             justify-content: end;
-        }`;
+        }
+            
+        #opt2{
+            color: #fff;
+            text-shadow: 0px 0px 25px #fff;
+        }
 
-    document.head.appendChild(style);
-});
-
-
-// Expertise
-opt3.addEventListener('click', () => {
-    content.innerHTML = `<div class="box">
+        #opt1,#opt3,#opt4,#opt5{
+            color: #ffffffbb;
+            text-shadow: none;
+        }`
+    },
+    {
+        element: opt3,
+        html:
+            `<div class="box">
             <div class="secUp">
                 <div class="pic" id="photo1"><img src="src/skills/skill1.png" alt="" srcset=""></div>
                 <div class="skilltitle">Skills</div>
@@ -184,10 +194,8 @@ opt3.addEventListener('click', () => {
                     </ul>
                 </div>
             </div>
-        </div>`;
-
-    const style = document.createElement('style');
-    style.innerHTML = `
+        </div>`,
+        style: `
         .box {
           display: flex;
           flex-direction: column;
@@ -256,15 +264,22 @@ opt3.addEventListener('click', () => {
           font-size: 18px;
           margin: 0;
         }
-        `;
 
-    document.head.appendChild(style);
+        #opt3{
+            color: #fff;
+            text-shadow: 0px 0px 25px #fff;
+        }
 
-});
-
-// MyWorks
-opt4.addEventListener('click', () => {
-    content.innerHTML = `<div class="box">
+        #opt1,#opt2,#opt4,#opt5{
+            color: #ffffffbb;
+            text-shadow: none;
+        }
+        `
+    },
+    {
+        element: opt4,
+        html:
+            `<div class="box">
             <div class="myWorktitle">My Works</div>
             <div class="props">
                 <div class="project">
@@ -295,11 +310,8 @@ opt4.addEventListener('click', () => {
                     <div class="plink"><a href="https://github.com/patelurvish0706/LearningJava">Source Code</a></div>
                 </div>
             </div>
-        </div>`;
-
-
-    const style = document.createElement('style');
-    style.innerHTML = `
+        </div>`,
+        style: `
         .box{
             display: flex;
             flex-direction: column;
@@ -361,59 +373,100 @@ opt4.addEventListener('click', () => {
             color: rgba(0, 0, 0, 0.832);
             text-decoration: underline;
         }
-        `;
+        
+        #opt2,#opt3,#opt1,#opt5{
+            color: #ffffffbb;
+            text-shadow: none;
+        }
+        
+        #opt4{
+            color: #fff;
+            text-shadow: 0px 0px 25px #fff;
+        }
+        `
+    },
+    {
+        element: opt5,
+        html: `<div class="box">
+        <div class="thnku">Thank You</div>
+        <div class="links">
+            <div class="insta"><a href="http://www.instagram.com/urvish_0706" target="_blank">www.instagram.com/urvish_0706</a></div>
+            <div class="linked"><a href="https://www.linkedin.com/in/urvishpatel0706/" target="_blank">www.linkedin.com/in/urvishpatel0706/</a></div>
+            <div class="git"><a href="https://github.com/patelurvish0706" target="_blank">github.com/patelurvish0706</a></div>
+        </div>
+        <div class="phone">
+            <div class="call">+91 743-602-0138</div>
+            <div class="mail">patelurvish0706@gmail.com</div>
+        </div>
+    </div>`,
+        style: `.box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-    document.head.appendChild(style);
+        .thnku{
+            font-size: 30px;
+            margin:30px 0px 20px 0px;
+        }
 
-});
+        .links,.phone{
+            display: flex;
+            flex-direction: c;
+            gap: 25px;
+            text-transform: none;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 18px;
+            margin: 20px 0px;
+            font-weight: 600;
+        }
 
+        .links a{
+            color: #ffffffd1;
+        }
+        .links a:hover{
+            color: #ffffff;
+            text-shadow: 0px 0px 10px #fff;
+        }
 
-opt5.addEventListener('click', () => {
-    content.innerHTML = `<div class="box">
-            <div class="thnku">Thank You</div>
-            <div class="links">
-                <div class="insta"><a href="http://www.instagram.com/urvish_0706" target="_blank">www.instagram.com/urvish_0706</a></div>
-                <div class="linked"><a href="https://www.linkedin.com/in/urvishpatel0706/" target="_blank">www.linkedin.com/in/urvishpatel0706/</a></div>
-                <div class="git"><a href="https://github.com/patelurvish0706" target="_blank">github.com/patelurvish0706</a></div>
-            </div>
-            <div class="phone">
-                <div class="call">+91 743-602-0138</div>
-                <div class="mail">patelurvish0706@gmail.com</div>
-            </div>
-        </div>`;
+        #opt5{
+            color: #fff;
+            text-shadow: 0px 0px 25px #fff;
+        }
 
+        #opt2,#opt3,#opt4,#opt1{
+            color: #ffffffbb;
+            text-shadow: none;
+        }`
+    }
+];
+
+let currentContentIndex = 4;
+
+function displayContent(index) {
+    content.innerHTML = contents[index].html;
     const style = document.createElement('style');
-    style.innerHTML = `.box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    style.innerHTML = contents[index].style;
+    document.head.appendChild(style);
 }
 
-.thnku{
-    font-size: 30px;
-    margin:30px 0px 20px 0px;
-}
+displayContent(currentContentIndex); // Display initial content
 
-.links,.phone{
-    display: flex;
-    flex-direction: c;
-    gap: 25px;
-    text-transform: none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 18px;
-    margin: 20px 0px;
-    font-weight: 600;
-}
+window.addEventListener('wheel', (event) => {
+    const delta = Math.sign(event.deltaY); // -1 for scrolling up, 1 for scrolling down
 
-.links a{
-    color: #ffffffd1;
-}
-.links a:hover{
-    color: #ffffff;
-    text-shadow: 0px 0px 10px #fff;
-}`;
-
-document.head.appendChild(style);
+    currentContentIndex = (currentContentIndex + delta + contents.length) % contents.length; // Cycle through the content
+    displayContent(currentContentIndex);
 
 });
+
+opt1.addEventListener('click', () => displayContent(0));
+opt2.addEventListener('click', () => displayContent(1));
+opt3.addEventListener('click', () => displayContent(2));
+opt4.addEventListener('click', () => displayContent(3));
+opt5.addEventListener('click', () => displayContent(4));
+
+
+content.innerHTML = "PORTFOLIO";
+content.style.fontSize = "70px";
