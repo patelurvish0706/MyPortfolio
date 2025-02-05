@@ -307,7 +307,7 @@ const contents = [
                     <div class="ptitle">Learning DSA</div>
                     <div class="pcode">Interview prep.</div>
                     <div class="pstatus">avilable✅</div>
-                    <div class="plink"><a href="https://github.com/patelurvish0706/LearningJava">Source Code</a></div>
+                    <div class="plink"><a href="https://github.com/patelurvish0706/LearningJava" target="_blank">Source Code</a></div>
                 </div>
             </div>
         </div>`,
