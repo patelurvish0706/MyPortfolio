@@ -25,11 +25,7 @@ const contents = [
                         </div>`,
         style:
             `.box{
-            display: flex;
             flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-
         }
 
         .photo{
@@ -41,6 +37,7 @@ const contents = [
             width: 305px;
             height: 310px
         }
+
         .meta{
             margin-left: 60px;
             width: 400px;
@@ -75,34 +72,37 @@ const contents = [
     {
         element: opt2,
         html:
-            `<div class="box">
-        <div class="edu">
-            <div class="eduTitlemain">Education</div>
+        `<div class="box" id="boxEdu">
+            <div class="edu">
+                <div class="eduTitlemain">Education</div>
 
-            <div class="course" id="studyTitle1">Bechalor of Engineering - IT</div>
-            <div class="Colname" id="collageTit1">Shree Swaminarayan Institute of technology,<br>Bhat - Ahmedabad.</div>
+                <div class="course" id="studyTitle1">Bechalor of Engineering - IT</div>
+                <div class="Colname" id="collageTit1">Shree Swaminarayan Institute of technology,<br>Bhat - Ahmedabad.</div>
             
-            <div class="course" id="studyTitle2">Diploma in Engineering - IT</div>
-            <div class="Colname" id="collageTit2">Government Polytechnic, Ghandhinagar.</div>
-        </div>
-        <div class="photo">
-            <div class="cpic" id="photo1"><img src="src/edu1.png" alt=""></div>
-            <div class="cpic" id="photo2"><img src="src/edu2.png" alt=""></div>
-        </div>
+                <div class="course" id="studyTitle2">Diploma in Engineering - IT</div>
+                <div class="Colname" id="collageTit2">Government Polytechnic, Ghandhinagar.</div>
+            </div>
+
+            <div class="photoin2">
+                <div class="cpic" id="photo1"><img src="src/edu1.png" alt=""></div>
+                <div class="cpic" id="photo2"><img src="src/edu2.png" alt=""></div>
+            </div>
         </div>`,
         style:
             `
-        .box{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+        #boxEdu{
+            width:80%;
+        }
+        
+        .box{ 
+            flex-direction: row; 
         }
         
         .edu{
             display: flex;
             flex-direction: column;
-            width: 500px;
+            width:40%;
+
         }
         
         .eduTitlemain{
@@ -121,10 +121,11 @@ const contents = [
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             text-transform: capitalize;
         }
-        .photo{
+
+        .photoin2{
             display: flex;
             flex-direction: column;
-            width: 400px;
+            width:40%;
         }
         
         .cpic img{
@@ -156,9 +157,13 @@ const contents = [
         html:
             `<div class="box">
             <div class="secUp">
-                <div class="pic" id="photo1"><img src="src/skills/skill1.png" alt="" srcset=""></div>
+                <div class="pic" id="photo1">
+                    <img src="src/skills/skill1.png" class="expPic" alt="" srcset="">
+                </div>
                 <div class="skilltitle">Skills</div>
-                <div class="pic" id="photo2"><img src="src/skills/skill3.png" alt="" srcset=""></div>
+                <div class="pic" id="photo2">
+                    <img src="src/skills/skill3.png" class="expPic" alt="" srcset="">
+                </div>
             </div>
             <div class="secdwn">
                 <div class="skillset" id="front">
@@ -196,11 +201,8 @@ const contents = [
             </div>
         </div>`,
         style: `
-        .box {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+        .box { 
+          flex-direction: column; 
         }
 
         .secUp {
@@ -312,11 +314,8 @@ const contents = [
             </div>
         </div>`,
         style: `
-        .box{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .box{ 
+            flex-direction: column; 
         }
 
         .myWorktitle{
@@ -413,7 +412,7 @@ const contents = [
 
         .links,.phone{
             display: flex;
-            flex-direction: c;
+            flex-direction: row;
             gap: 25px;
             text-transform: none;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -468,5 +467,6 @@ opt4.addEventListener('click', () => displayContent(3));
 opt5.addEventListener('click', () => displayContent(4));
 
 
-content.innerHTML = "PORTFOLIO";
-content.style.fontSize = "70px";
+content.innerHTML = `
+    <div id="portfoliotext">Portfolio</div>
+`;
