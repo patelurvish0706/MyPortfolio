@@ -12,7 +12,7 @@ const opt3 = document.getElementById('opt3');
 const opt4 = document.getElementById('opt4');
 const opt5 = document.getElementById('opt5');
 
-const contents = [ 
+const contents = [
     {
         element: opt1,
         html:
@@ -72,7 +72,7 @@ const contents = [
     {
         element: opt2,
         html:
-        `<div class="box" id="boxEdu">
+            `<div class="box" id="boxEdu">
             <div class="edu">
                 <div class="eduTitlemain">Education</div>
 
@@ -319,7 +319,6 @@ const contents = [
         }
 
         .myWorktitle{
-            position: absolute;
             font-size: 30px;
             margin:30px 0px 40px 0px;
         }
@@ -458,7 +457,7 @@ window.addEventListener('wheel', (event) => {
 
     currentContentIndex = (currentContentIndex + delta + contents.length) % contents.length; // Cycle through the content
     displayContent(currentContentIndex);
-    
+
 });
 
 opt1.addEventListener('click', () => displayContent(0));
@@ -481,14 +480,14 @@ content.innerHTML = `
 let allOptions = document.querySelectorAll(".option");
 let visibleMenu = document.getElementById("visibleMenu");
 
-function resized(){
+function resized() {
     if (window.innerWidth <= 726) {
 
         allOptions.forEach(el => {
             el.style.display = 'none';
         });
 
-        visibleMenu.style.display = "flex"  
+        visibleMenu.style.display = "flex"
 
     } else {
 
@@ -501,17 +500,17 @@ function resized(){
 }
 resized();
 
-window.addEventListener('resize',()=>{
-   resized();
-}) 
+window.addEventListener('resize', () => {
+    resized();
+})
 
 // ------------------------------------------------------------------------------------
 
-window.onload = function() {
-    setTimeout(function() {
-      displayContent(0);
+window.onload = function () {
+    setTimeout(function () {
+        displayContent(0);
     }, 1500); // 1000ms = 1 second
-  };
+};
 // ------------------------------------------------------------------------------------
 
 let currentIndex = 0;
@@ -524,7 +523,7 @@ rightMove.addEventListener("click", function () {
         currentIndex++;
         displayContent(currentIndex);
         console.log(currentIndex);
-        
+
     }
     updateButtons();
 });
@@ -542,7 +541,7 @@ leftMove.addEventListener("click", function () {
 function updateButtons() {
     leftMove.style.opacity = currentIndex === 0 ? "0.5" : "1";
     leftMove.disabled = currentIndex === 0;
-    
+
     rightMove.style.opacity = currentIndex === totalContent ? "0.5" : "1";
     rightMove.disabled = currentIndex === totalContent;
 }
