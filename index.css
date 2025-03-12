@@ -17,22 +17,22 @@ body {
     height: 30px;
     border-radius: 50%;
     background-color: rgba(128, 128, 128, 0.538);
-    pointer-events: none; 
-    transition: transform 0.2s ease; 
+    pointer-events: none;
+    transition: transform 0.2s ease;
     z-index: 100;
-  }
-  
+}
 
-.display{
+
+.display {
     color: #ffffff;
     width: 100vw;
     height: 100vh;
     background-color: #242020;
 }
 
-.display .upNavbar{
+.display .upNavbar {
     width: 100%;
-    top: 70px;
+    top: 50PX;
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -43,18 +43,18 @@ body {
     white-space: nowrap;
 }
 
-#portfoliotext{
-    font-size:60px;
+#portfoliotext {
+    font-size: 60px;
 }
 
-.line{
+.line {
     background-color: rgb(255, 255, 255);
     width: 550px;
     height: 2px;
     border-radius: 5px;
 }
 
-.display .upNavbar .options{
+.display .upNavbar .options {
     color: #ffffffbb;
     display: flex;
     flex-direction: row;
@@ -62,12 +62,13 @@ body {
     padding: 0px 50px;
 }
 
-.option,.display .lowNavbar .dotmenu:hover{
+.option,
+.display .lowNavbar .dotmenu:hover {
     color: #fff;
     text-shadow: 0px 0px 25px #fff;
 }
 
-.display .lowNavbar{
+.display .lowNavbar {
     width: 100%;
     bottom: 60px;
     position: absolute;
@@ -79,13 +80,31 @@ body {
 
 }
 
-.display .lowNavbar .dotmenu{
+.display .lowNavbar .dotmenu {
     font-size: 20px;
     padding: 0px 50px;
     text-align: center;
 }
 
-.focus{
+.dotmenu {
+    display: flex;
+    flex-direction: row;
+}
+
+#scrolltosee {
+    font-size: 12px;
+    display: flex;
+}
+
+.moveSlidIcn {
+    display: none;
+    padding: 12px 17px;
+    background-color: #80808033;
+    margin: 5px;
+    border-radius: 100%;
+}
+
+.focus {
     position: absolute;
     width: 0px;
     height: 0px;
@@ -94,23 +113,23 @@ body {
     box-shadow: 0px 0px 200px 100px #fff4;
 }
 
-#foc1{
+#foc1 {
     top: 30%;
     left: 25%;
 }
 
-#foc2{
+#foc2 {
     top: 60%;
     left: 70%;
 }
 
-.box{
+.box {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.content{
+.content {
     position: absolute;
     display: flex;
     width: 100%;
@@ -121,30 +140,35 @@ body {
     z-index: 0;
 }
 
+#visibleMenu {
+    display: none;
+    color: #fff;
+}
+
 @media (max-width: 1024px) {
 
-    .line{
+    .line {
         display: none;
     }
 
-    .options{
+    .options {
         width: 100%;
         margin: auto;
         display: flex;
         justify-content: center;
     }
 
-    #portfoliotext{
+    #portfoliotext {
         font-size: 55px;
     }
 
     /* About me */
 
-    .box{
+    .box {
         width: 80%;
     }
 
-    .photo img{
+    .photo img {
         width: 270px;
         height: 270px;
     }
@@ -166,28 +190,28 @@ body {
         font-size: 18px;
         font-weight: 200;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        text-transform: capitalize;      
+        text-transform: capitalize;
     }
 
     /* Education */
 
-    .boxEdu{
+    .boxEdu {
         width: 60%;
     }
 
-    .edu{
+    .edu {
         width: 55%;
     }
 
-    .photoin2{
+    .photoin2 {
         width: 55%;
     }
 
-    .eduTitlemain{
+    .eduTitlemain {
         font-size: 28px;
     }
 
-    .cpic img{
+    .cpic img {
         width: 230px;
         height: 140px;
         object-fit: cover;
@@ -207,42 +231,46 @@ body {
 
     /* Expertise */
 
-    .secUp{
+    .secUp {
         width: 50%;
         justify-content: center;
-    } 
-    
-    .secdwn{
+    }
+
+    .secdwn {
         width: 60%;
         justify-content: center;
-        gap:10px;
+        gap: 10px;
     }
-    .skilltitle{
+
+    .skilltitle {
         margin: 60px;
         font-size: 28px;
     }
-    .secUp .pic img{
+
+    .secUp .pic img {
         width: 220px;
     }
 
-    .facTitle{
+    .facTitle {
         font-size: 16px;
     }
-    .skillset ul li{
+
+    .skillset ul li {
         font-size: 15px;
     }
-    .skillset{
+
+    .skillset {
         margin: 2px;
     }
 
     /* My works */
 
-    .myWorktitle{
+    .myWorktitle {
         font-size: 28px;
         margin: 20px 0px 30px 0px;
     }
 
-    .props{
+    .props {
         width: 660px;
     }
 
@@ -267,14 +295,202 @@ body {
         font-size: 28px;
     }
 
-    .links{
+    .links {
         flex-direction: column;
         text-align: center;
+    }
+
+    .dotmenu {
+        display: flex;
+    }
+
+    #scrolltosee {
+        display: none;
+    }
+
+    .moveSlidIcn {
+        display: flex;
     }
 }
 
 @media (max-width: 726px) {
-body{
-    display: none;
-}
+
+    body{
+        overflow-y: hidden;
+    }
+    
+    .dotmenu {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Portfolio */
+
+    #portfoliotext {
+        font-size: 45px;
+    }
+
+    /* About ME */
+
+    .box {
+        flex-direction: column;
+        align-items: center;
+        margin-top: -50px;
+    }
+
+    .display .upNavbar {
+        top: 30px;
+    }
+
+    .display .lowNavbar {
+        bottom: 30px;
+    }
+
+    .photo img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .meta {
+        padding-top: 15px;
+        margin: 0px;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .meta .title {
+        font-size: 24px;
+        display: flex;
+        justify-content: center
+    }
+
+    .meta .minititle {
+        font-size: 16px;
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+
+    /* education */
+
+    .edu {
+        width: 270px;
+    }
+
+    .photoin2 {
+        min-width: 250px;
+    }
+
+    .cpic img {
+        width: 170px;
+        height: 100px;
+    }
+
+    #boxEdu {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+
+    .eduTitlemain {
+        font-size: 20px;
+        margin-top: 14px;
+        text-align: center;
+    }
+
+    .course {
+        margin-top: 18px;
+        font-size: 17px;
+    }
+
+    .Colname {
+        font-size: 14px;
+    }
+
+    /* Skilsss */
+
+    .secUp {
+        margin-top: 0px;
+    }
+
+    .secdwn {
+        flex-direction: column;
+        gap: 0px;
+        margin-top: 24px;
+        width: 148px;
+    }
+
+    .skilltitle {
+        font-size: 18px;
+        margin: 20px;
+    }
+
+    .secUp .pic img {
+        /* border-radius: 0px; */
+        width: 110px;
+    }
+
+    .facTitle {
+        text-align: center;
+        font-size: 14px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .skillset ul {
+        margin: 8px;
+        text-align: left;
+    }
+
+    /* Projectss */
+
+    .myWorktitle {
+        font-size: 24px;
+        /* margin:50px 0px 20px 0px; */
+        top: 50px;
+    }
+
+    .props {
+        width: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 200px;
+        height: 70px;
+    }
+
+    .pcode,
+    .pstatus{
+        display: none;
+    }
+
+    .ptitle {
+        font-size: 15px;
+    }
+
+    .pcode,
+    .pstatus,
+    .plink {
+        text-transform: capitalize;
+        font-size: 12px;
+        font-weight: 200;
+    }
+
+    .projetBox{
+        margin-top: 10px;
+    }
+
+    /* Connect */
+
+    .phone {
+        flex-direction: column;
+        text-align: center;
+    }
+
 }

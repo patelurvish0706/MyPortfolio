@@ -281,7 +281,7 @@ const contents = [
     {
         element: opt4,
         html:
-            `<div class="box">
+            `<div class="box projetBox" id="projetBox">
             <div class="myWorktitle">My Works</div>
             <div class="props">
                 <div class="project">
@@ -319,6 +319,7 @@ const contents = [
         }
 
         .myWorktitle{
+            position: absolute;
             font-size: 30px;
             margin:30px 0px 40px 0px;
         }
@@ -441,7 +442,7 @@ const contents = [
     }
 ];
 
-let currentContentIndex = 4;
+let currentContentIndex = 0;
 
 function displayContent(index) {
     content.innerHTML = contents[index].html;
@@ -457,7 +458,7 @@ window.addEventListener('wheel', (event) => {
 
     currentContentIndex = (currentContentIndex + delta + contents.length) % contents.length; // Cycle through the content
     displayContent(currentContentIndex);
-
+    
 });
 
 opt1.addEventListener('click', () => displayContent(0));
@@ -466,7 +467,89 @@ opt3.addEventListener('click', () => displayContent(2));
 opt4.addEventListener('click', () => displayContent(3));
 opt5.addEventListener('click', () => displayContent(4));
 
+// displayContent(0)
+// displayContent(1)
+// displayContent(2)
+// displayContent(3)
+// displayContent(4)
+// displayContent(5)
 
 content.innerHTML = `
     <div id="portfoliotext">Portfolio</div>
 `;
+
+let allOptions = document.querySelectorAll(".option");
+let visibleMenu = document.getElementById("visibleMenu");
+
+function resized(){
+    if (window.innerWidth <= 726) {
+
+        allOptions.forEach(el => {
+            el.style.display = 'none';
+        });
+
+        visibleMenu.style.display = "flex"  
+
+    } else {
+
+        visibleMenu.style.display = "none"
+
+        allOptions.forEach(el => {
+            el.style.display = 'flex';
+        });
+    }
+}
+resized();
+
+window.addEventListener('resize',()=>{
+   resized();
+}) 
+
+// ------------------------------------------------------------------------------------
+
+window.onload = function() {
+    setTimeout(function() {
+      displayContent(0);
+    }, 1500); // 1000ms = 1 second
+  };
+// ------------------------------------------------------------------------------------
+
+let currentIndex = 0;
+const totalContent = 4;
+
+let rightMove = document.getElementById("rightMove");
+
+rightMove.addEventListener("click", function () {
+    if (currentIndex < totalContent) {
+        currentIndex++;
+        displayContent(currentIndex);
+        console.log(currentIndex);
+        
+    }
+    updateButtons();
+});
+
+let leftMove = document.getElementById("leftMove");
+
+leftMove.addEventListener("click", function () {
+    if (currentIndex > 0) {
+        currentIndex--;
+        displayContent(currentIndex);
+    }
+    updateButtons();
+});
+
+function updateButtons() {
+    leftMove.style.opacity = currentIndex === 0 ? "0.5" : "1";
+    leftMove.disabled = currentIndex === 0;
+    
+    rightMove.style.opacity = currentIndex === totalContent ? "0.5" : "1";
+    rightMove.disabled = currentIndex === totalContent;
+}
+
+// Initial state update
+updateButtons();
+
+
+// ----------------------------------------------------------------------------------
+
