@@ -6,7 +6,7 @@ Containing many section, managed using Javascript DOM.
 
 🔗link - https://patelurvish0706.github.io/MyPortfolio/
 
-### HTML
+## HTML
 * **Webpage Icon Using .svg**
 
 * Using DIV - Classes and Ids for Elements
@@ -18,13 +18,13 @@ Containing many section, managed using Javascript DOM.
     4. **Projects** 
     5. **Connect**
 
-### Css
+## Css
 * Styling using Class And Ids
 * **Responsive (max-width: 1024px)**
 * **Responsive (max-width: 726px)**
 * Different Styles for each Section.
 
-### Javascript 
+## Javascript 
 * Variables 
 * Object 
 

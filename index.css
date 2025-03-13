@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&display=swap');
+
+
 body {
     margin: 0;
     padding: 0;
@@ -9,7 +12,9 @@ body {
     cursor: none;
 }
 
-.cursor {
+/*----------------- Default CSS for all type of Width -----------------*/
+
+.cursor { 
     position: fixed;
     top: 0px;
     left: 0;
@@ -143,7 +148,12 @@ body {
 #visibleMenu {
     display: none;
     color: #fff;
+    font-family: "Babylonica", cursive;
+    text-transform: none;
+    font-size: 28px;
 }
+
+/* Responsive style for max-width: 1024px */
 
 @media (max-width: 1024px) {
 
@@ -328,7 +338,7 @@ body {
     /* Portfolio */
 
     #portfoliotext {
-        font-size: 45px;
+        font-size: 40px;
     }
 
     /* About ME */
@@ -450,8 +460,8 @@ body {
 
     .myWorktitle {
         position: absolute;
-        font-size: 24px;
-        top: 50px;
+        font-size: 14px;
+        top: 70px;
     }
 
     .props {
@@ -491,6 +501,23 @@ body {
     .phone {
         flex-direction: column;
         text-align: center;
+        font-size: 16px;
+        user-select: auto;
+        gap: 15px;
     }
 
+    .thnku {
+        font-size: 20px;
+    }
+
+    .links{
+        font-size: 15px;
+    }
+
+    .phone a{
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #0003;
+    border-radius: 10px;
+    }
 }

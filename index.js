@@ -1,3 +1,5 @@
+// ------------------New Cursor on Display-------------------
+
 const cursor = document.querySelector('.cursor');
 
 document.addEventListener('mousemove', (e) => {
@@ -5,12 +7,16 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + (-15) + 'px';
 });
 
+// ------------------Selecting each Options--------------------
+
 const content = document.getElementById('content');
-const opt1 = document.getElementById('opt1'); // elements with ids "opt1", "opt2", etc.
+const opt1 = document.getElementById('opt1');
 const opt2 = document.getElementById('opt2');
 const opt3 = document.getElementById('opt3');
 const opt4 = document.getElementById('opt4');
 const opt5 = document.getElementById('opt5');
+
+// -----------------Object contain element and HTML----------------
 
 const contents = [
     {
@@ -20,7 +26,7 @@ const contents = [
                             <div class="photo"><img src="src/myImg2.jpg" alt="" srcset=""></div>
                             <div class="meta">
                                 <div class="title">About Me</div>
-                                <div class="minititle">Hello, my name is Urvish Patel. I am 19 years old BE IT student and have a hobby of creating amazing websites. I am a Developer with 3 years experience as a Student developer. I started my career in IT field since I was 16 years old.</div>
+                                <div class="minititle">Hello, my name is Urvish Patel. BE IT student, hobby of creating amazing websites. I am a Developer with 3 years of experience as a Student. always ready to code and making Fronted Projects.</div>
                             </div>
                         </div>`,
         style:
@@ -394,8 +400,8 @@ const contents = [
             <div class="git"><a href="https://github.com/patelurvish0706" target="_blank">github.com/patelurvish0706</a></div>
         </div>
         <div class="phone">
-            <div class="call">+91 743-602-0138</div>
-            <div class="mail">patelurvish0706@gmail.com</div>
+            <a class="call" href="tel:7436020138">+91 743-602-0138</a>
+            <a class="mail" href="mailto:patelurvish0706@gmail.com">patelurvish0706@gmail.com</a>
         </div>
     </div>`,
         style: `.box{
@@ -421,9 +427,17 @@ const contents = [
             font-weight: 600;
         }
 
-        .links a{
+        .links a ,.phone a{
             color: #ffffffd1;
         }
+
+        .phone a{
+            text-decoration: none;
+            padding: 5px 10px;
+            background-color: #0003;
+            border-radius: 10px;
+        }
+
         .links a:hover{
             color: #ffffff;
             text-shadow: 0px 0px 10px #fff;
@@ -440,6 +454,8 @@ const contents = [
         }`
     }
 ];
+
+// ---------------Display each section in sequence---------------------
 
 let currentContentIndex = 0;
 
@@ -460,22 +476,27 @@ window.addEventListener('wheel', (event) => {
 
 });
 
+// -------------------Loading sections by clicking on Options-------------------
+
 opt1.addEventListener('click', () => displayContent(0));
 opt2.addEventListener('click', () => displayContent(1));
 opt3.addEventListener('click', () => displayContent(2));
 opt4.addEventListener('click', () => displayContent(3));
 opt5.addEventListener('click', () => displayContent(4));
 
-// displayContent(0)
-// displayContent(1)
-// displayContent(2)
-// displayContent(3)
-// displayContent(4)
-// displayContent(5)
+// --------------------SHOW PORTFOLIO TEXT ON LOAD --------------------------------
 
 content.innerHTML = `
     <div id="portfoliotext">Portfolio</div>
 `;
+
+window.onload = function () {
+    setTimeout(function () {
+        displayContent(0);
+    }, 1300); // 1000ms = 1 second
+};
+
+// ----------------Handling NavOptions on resizing and Default window size------------------
 
 let allOptions = document.querySelectorAll(".option");
 let visibleMenu = document.getElementById("visibleMenu");
@@ -504,40 +525,52 @@ window.addEventListener('resize', () => {
     resized();
 })
 
-// ------------------------------------------------------------------------------------
-
-window.onload = function () {
-    setTimeout(function () {
-        displayContent(0);
-    }, 1500); // 1000ms = 1 second
-};
-// ------------------------------------------------------------------------------------
+// -------------------For Slideing LEFT RIGHT----------------------------------------
 
 let currentIndex = 0;
 const totalContent = 4;
 
+let leftMove = document.getElementById("leftMove");
 let rightMove = document.getElementById("rightMove");
 
-rightMove.addEventListener("click", function () {
-    if (currentIndex < totalContent) {
-        currentIndex++;
-        displayContent(currentIndex);
-        console.log(currentIndex);
-
-    }
-    updateButtons();
-});
-
-let leftMove = document.getElementById("leftMove");
-
-leftMove.addEventListener("click", function () {
+// Functions for slide to left and right
+function goleft() {
     if (currentIndex > 0) {
         currentIndex--;
         displayContent(currentIndex);
     }
     updateButtons();
+}
+
+function goright() {
+    if (currentIndex < totalContent) {
+        currentIndex++;
+        displayContent(currentIndex);
+    }
+    updateButtons();
+}
+
+// Slide left and right Using Button on Display
+leftMove.addEventListener("click", function () {
+    goleft();
+});
+rightMove.addEventListener("click", function () {
+    goright();
 });
 
+// Slide left and right using LEFTKEY and RIGHTKEY
+document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") {
+        goleft();
+    }
+});
+document.addEventListener("keydown", function (event) {
+    if (event.key === "ArrowRight") {
+        goright();
+    }
+});
+
+// Fade Button on Last index
 function updateButtons() {
     leftMove.style.opacity = currentIndex === 0 ? "0.5" : "1";
     leftMove.disabled = currentIndex === 0;
@@ -545,10 +578,4 @@ function updateButtons() {
     rightMove.style.opacity = currentIndex === totalContent ? "0.5" : "1";
     rightMove.disabled = currentIndex === totalContent;
 }
-
-// Initial state update
 updateButtons();
-
-
-// ----------------------------------------------------------------------------------
-
