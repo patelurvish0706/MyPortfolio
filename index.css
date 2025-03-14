@@ -157,6 +157,11 @@ body {
 
 @media (max-width: 1024px) {
 
+
+    .cursor {
+        display: none;
+    }
+
     .line {
         display: none;
     }
@@ -324,6 +329,10 @@ body {
 }
 
 @media (max-width: 726px) {
+
+    .cursor {
+        display: none;
+    }
 
     body {
         overflow-y: hidden;
