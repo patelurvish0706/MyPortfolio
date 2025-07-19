@@ -82,10 +82,10 @@ const contents = [
             <div class="edu">
                 <div class="eduTitlemain">Education</div>
 
-                <div class="course" id="studyTitle1">Bechalor of Engineering - IT</div>
+                <div class="course" id="studyTitle1">Bechalor of Engineering - IT ,CGPA 8.44</div>
                 <div class="Colname" id="collageTit1">Shree Swaminarayan Institute of technology,<br>Bhat - Ahmedabad.</div>
             
-                <div class="course" id="studyTitle2">Diploma in Engineering - IT</div>
+                <div class="course" id="studyTitle2">Diploma in Engineering - IT, CGPA  8.02</div>
                 <div class="Colname" id="collageTit2">Government Polytechnic, Ghandhinagar.</div>
             </div>
 
@@ -184,7 +184,7 @@ const contents = [
                 <div class="skillset" id="back">
                     <div class="facTitle">Backend Skills</div>
                     <ul>
-                        <li>Java</li>
+                        <li>PHP</li>
                         <li>Node.js</li>
                         <li>React.js</li>
                     </ul>
@@ -292,31 +292,32 @@ const contents = [
             <div class="props">
                 <div class="project">
                    <div class="ptitle">Patient Information Management System</div>
-                   <div class="pcode">Frontend (Only)</div>
-                   <div class="pstatus">Live🔴</div>
+                   <div class="pcode">Frontend + Backend</div>
+                   <div class="pstatus">offline🌐</div>
                    <div class="plink"><a href="https://patelurvish0706.github.io/PIMS/" target="_blank">Show Project</a></div>
+                </div>
+                                
+                <div class="project">
+                    <div class="ptitle">Techno Pharms</div>
+                    <div class="pcode">Fronted + Backend</div>
+                    <div class="pstatus">offline🌐</div>
+                    <div class="plink"><a href="https://github.com/patelurvish0706/TechnoPharms/" target="_blank">Source Code</a></div>
                 </div>
 
                 <div class="project">
-                    <div class="ptitle">Login Signup PHP code</div>
-                    <div class="pcode">Backend (Only)</div>
-                    <div class="pstatus">offline🌐</div>
-                    <div class="plink"><a href="https://patelurvish0706.github.io/Signup-login/" target="_blank">Show Project</a></div>
+                    <div class="ptitle">JavaScriptCompiler</div>
+                    <div class="pcode">Frontend + Backend.</div>
+                    <div class="pstatus">Live🔴</div>
+                    <div class="plink"><a href="https://patelurvish0706.github.io/JavaScriptCompiler/Compiler/" target="_blank">Live</a></div>
                 </div>
                 
                 <div class="project">
-                    <div class="ptitle">My portfolio</div>
-                    <div class="pcode">Fronted</div>
-                    <div class="pstatus">You're Watching✨</div>
-                    <div class="plink"><a href="https://github.com/patelurvish0706/MyPortfolio" target="_blank">Source Code</a></div>
+                    <div class="ptitle">Login Signup PHP code</div>
+                    <div class="pcode">Frontend + Backend</div>
+                    <div class="pstatus">offline🌐</div>
+                    <div class="plink"><a href="https://patelurvish0706.github.io/Signup-login/" target="_blank">Show Project</a></div>
                 </div>
 
-                <div class="project">
-                    <div class="ptitle">Learning DSA</div>
-                    <div class="pcode">Interview prep.</div>
-                    <div class="pstatus">avilable✅</div>
-                    <div class="plink"><a href="https://github.com/patelurvish0706/LearningJava" target="_blank">Source Code</a></div>
-                </div>
             </div>
         </div>`,
         style: `
