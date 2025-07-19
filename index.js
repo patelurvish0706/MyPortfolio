@@ -305,7 +305,7 @@ const contents = [
                 </div>
 
                 <div class="project">
-                    <div class="ptitle">JavaScriptCompiler</div>
+                    <div class="ptitle">JavaScript Compiler</div>
                     <div class="pcode">Frontend + Backend.</div>
                     <div class="pstatus">Live🔴</div>
                     <div class="plink"><a href="https://patelurvish0706.github.io/JavaScriptCompiler/Compiler/" target="_blank">Live</a></div>
